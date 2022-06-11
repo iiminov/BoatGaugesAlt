@@ -1,14 +1,31 @@
-# BoatGauges
-Example sketch for six different boat gauges namely:
-1. Coolant pressure (psi)
-2. Coolant temp (degree C)
-3. Oil pressure (psi)
-4. Speedo (km/h)
-5. Tacho (rpm)
-6. Battery voltage
+# BoatGaugesAlt
+The alternative example sketch for six different boat gauges came about due to an issue with orignal code.
 
+![image](https://user-images.githubusercontent.com/6739564/173200118-24206e48-b5ac-4df7-a65d-6add535acb31.png)
 
-For live demonstration visit [https://www.youtube.com/watch?v=y_H7HM0oyoo]
+Which I also came across and reported it under original project [here](https://github.com/VolosR/BoatGauges/issues/1).
+
+The solution boils down to removing reliance on the needle bounding box coordinates which are prepopulate in the ``setup()`` method:
+```
+  while (a != 44) {
+    x[i] = r * cos(rad * a) + sx;
+    y[i] = r * sin(rad * a) + sy;
+    x2[i] = (r - 20) * cos(rad * a) + sx;
+    y2[i] = (r - 20) * sin(rad * a) + sy;
+
+    i++;
+    a++;
+
+    // reset "a" on overflow
+    if (a == 360) {
+      a = 0;
+  }
+```
+
+## Code repositories
+- For live demonstration visit [https://www.youtube.com/watch?v=y_H7HM0oyoo]
+- For original code visit [VolosR/BoatGauges](https://github.com/VolosR/BoatGauges)
+- For original code with comments visit [iiminov/BoatGauges](https://github.com/iiminov/BoatGauges)
 
 # Arduino IDE Setup
 1. Install ESP32 boards library [guide from randomnerdtutorials](https://randomnerdtutorials.com/installing-the-esp32-board-in-arduino-ide-windows-instructions/)
