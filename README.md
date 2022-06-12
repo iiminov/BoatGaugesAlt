@@ -1,11 +1,11 @@
 # BoatGaugesAlt
-The alternative example sketch for six different boat gauges came about due to an issue with orignal code.
+The alternative example sketch for six different boat gauges came about due to an issue with original code.
 
 ![image](https://user-images.githubusercontent.com/6739564/173200118-24206e48-b5ac-4df7-a65d-6add535acb31.png)
 
 Which I also came across and reported it under original project [here](https://github.com/VolosR/BoatGauges/issues/1).
 
-The solution boils down to removing reliance on the needle bounding box coordinates which are prepopulate in the ``setup()`` method:
+The solution boils down to removing reliance on the needle bounding box coordinates which are pre-populate in the ``setup()`` method:
 ```
   while (a != 44) {
     x[i] = r * cos(rad * a) + sx;
@@ -34,7 +34,7 @@ The solution boils down to removing reliance on the needle bounding box coordina
 ![image](https://user-images.githubusercontent.com/6739564/173196508-e732ded0-ca3b-419f-80a7-bce4eaf675de.png)
 
 
-# Cofigure TFT_eSPI library
+# Configure TFT_eSPI library
 Open ``..\Documents\Arduino\libraries\TFT_eSPI\User_Setup.h`` and comment out line 44:
 ```
 //#define ILI9341_DRIVER
@@ -66,7 +66,7 @@ Open ``..\Documents\Arduino\libraries\TFT_eSPI\User_Setups\Setup200_GC9A01.h`` a
 # ESP32 & GC9A01 Connections
 
 ![image](https://user-images.githubusercontent.com/6739564/172683255-a640ba47-1d2f-4fc0-b8f3-acbada262f81.png)
-> Image is curtesy of WOKWI.com and some MS Paint work
+> Image is courtesy of WOKWI.com and some MS Paint work
 
 ```
 ESP32     GC9A01
