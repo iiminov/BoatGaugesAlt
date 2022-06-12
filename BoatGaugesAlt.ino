@@ -53,7 +53,7 @@ void setup() {
   img.createSprite(240, 240); // create sprite in RAM
 
   // set gauge text position, size, color, font
-  img.setTextDatum(4);
+  img.setTextDatum(MC_DATUM); // middle centre text alignment
   img.setTextColor(TFT_BLACK, 0xAD55);
   img.setFreeFont(&Orbitron_Medium_28);
 }
